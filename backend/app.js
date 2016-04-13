@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 var app = express();
 
-app.use(cocors());
-app.use(bodyParser.urlencoded({extended:tru}));
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 var MongoClient = mongodb.MongoClient;
@@ -24,7 +24,7 @@ app.get('/movies', function(request,response) {
     if (err) {
       console.log('Unable to connect to mongodb', err);
     } else {
-      moviesCollection.find().toArray(funciton(err,result) {
+      moviesCollection.find().toArray(function(err,result) {
         if (err) {
           console.log('Error', err);
           response.json('error');
