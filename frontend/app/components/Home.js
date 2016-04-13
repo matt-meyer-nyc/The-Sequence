@@ -5,7 +5,7 @@ import AjaxHelper from '../utils/AjaxHelpers'
 const Home = React.createClass({
   clicked:function(){
     console.log('clicked');
-    AjaxHelper.findMovie()
+    AjaxHelper.showMovies()
     .then(function(response){
       console.log(response.data);
       this.setState({
@@ -21,6 +21,11 @@ const Home = React.createClass({
     return(
       <div>
         <h3>Home</h3>
+        <Link to="/list"><button >List page </button></Link>
+        <br/><br/>
+        <Link to="/search"><button>Search page </button></Link>
+        <br/><br/>
+        <Link to="/add"><button>Add page </button></Link>
         <button onClick={this.clicked}>submit</button>
       </div>
     )
