@@ -9,7 +9,7 @@ const AddContainer = React.createClass({
   getInitialState: function() {
     return {
 
-      Title: '',
+      Name: '',
       Movie1: '',
       Movie2: '',
       Movie3: '',
@@ -18,9 +18,9 @@ const AddContainer = React.createClass({
     };
   },
 
-  onChangeTitle: function(e) {
+  onChangeName: function(e) {
     this.setState({
-      Title: e.target.value
+      Name: e.target.value
     })
   },
   onChangeMovie1: function(e) {
@@ -46,18 +46,19 @@ const AddContainer = React.createClass({
   onSubmitList: function(e) {
     e.preventDefault();
     const List = {
-      Title: this.state.Title,
+      Name: this.state.Name,
       Movie1: this.state.Movie1,
       Movie2: this.state.Movie2,
       Movie3: this.state.Movie3,
       Description: this.state.Description
     }
-  
-    console.log(List);
+    var movieArray = [this.state.Movie1, this.state.Movie2, this.state.Movie3];
+console.log(this.state.Name);
+for(var i = 0; i < movieArray.length; i++){
 
-    AjaxHelper.getMovies(List)
+    AjaxHelper.getMovies(movieArray[i])
     .then(function(response){
-      console.log(response.data);
+      console.log(response.data.results[0].title);
       this.setState({
         listAdded: "added"
       });
@@ -66,12 +67,16 @@ const AddContainer = React.createClass({
       console.warn('err');
       return err;
     })
-  },
+  }
+},
+
+
+
 
   render: function(){
     return(
       <div className="display">
-        <Add onChangeTitle={this.onChangeTitle}
+        <Add onChangeName={this.onChangeName}
           onChangeMovie1={this.onChangeMovie1}
           onChangeMovie2={this.onChangeMovie2}
           onChangeMovie3={this.onChangeMovie3}

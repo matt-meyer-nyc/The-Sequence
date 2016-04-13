@@ -5,7 +5,7 @@ import AjaxHelper from '../utils/AjaxHelpers'
 const Home = React.createClass({
   clicked:function(){
     console.log('clicked');
-    AjaxHelper.showMovies()
+    AjaxHelper.findMovie()
     .then(function(response){
       console.log(response.data);
       this.setState({
