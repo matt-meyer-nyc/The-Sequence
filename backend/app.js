@@ -41,7 +41,7 @@ app.get('/movies', function(request,response) {
 });
 
 /*add user(movie)*/
-app.post('movies/add', function (request, response){
+app.post('/movies/add', function (request, response){
   console.log('request.body', request.body);
 
   MongoClient.connect(mongoUrl, function(err,db) {
@@ -52,8 +52,7 @@ app.post('movies/add', function (request, response){
       console.log('Connection', mongoUrl);
       console.log('Adding new user...');
 
-      var newUser = request.body;
-      moviesCollection.insert([newUser], function(err,result) {
+      moviesCollection.insert(request.body, function(err,result) {
         if (err) {
           console.log(err);
           response.json('error');

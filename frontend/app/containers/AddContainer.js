@@ -10,6 +10,7 @@ const AddContainer = React.createClass({
     return {
 
       Name: '',
+      Title: '',
       Movie1: '',
       Movie2: '',
       Movie3: '',
@@ -23,9 +24,9 @@ const AddContainer = React.createClass({
       Author: e.target.value
     })
   },
-  onChangeName: function(e) {
+  onChangeTitle: function(e) {
     this.setState({
-      Name: e.target.value
+      Title: e.target.value
     })
   },
   onChangeMovie1: function(e) {
@@ -51,17 +52,21 @@ const AddContainer = React.createClass({
   onSubmitList: function(e) {
     e.preventDefault();
     const List = {
-      Name: this.state.Name,
+      Author: this.state.Author,
+      Title: this.state.Title,
       Movie1: this.state.Movie1,
       Movie2: this.state.Movie2,
       Movie3: this.state.Movie3,
       Description: this.state.Description
     }
-  var AddPlaylist = {name:'', playlists: [ { listname:'', movies: [] }] }
+  var AddPlaylist = {author:'', playlists: [ { title:'', movies: [] }] }
   var movieArray = [this.state.Movie1, this.state.Movie2, this.state.Movie3];
 
+AddPlaylist.author = (List.Author);
+AddPlaylist.playlists[0].title = (List.Title);
+console.log(List.Movie1);
 
-console.log(this.state.Name);
+console.log(List.Title);
 for(var i = 0; i < movieArray.length; i++){
 
     AjaxHelper.getMovies(movieArray[i])
@@ -75,18 +80,27 @@ for(var i = 0; i < movieArray.length; i++){
         year: response.data.results[0].release_year
       }
       AddPlaylist.playlists[0].movies.push(movieList);
-      console.log('playlist',AddPlaylist.playlists[0].movies);
-
-      this.setState({
-        listAdded: "added"
-      });
+      console.log('playlist',AddPlaylist);
 
     }.bind(this))
     .catch(function(err){
       console.warn('err', err);
       return err;
-    })
-  }
+    });
+  };
+setTimeout(function(){
+  AjaxHelper.addMovies(AddPlaylist)
+  .then(function(response){
+    console.log(response.data);
+  }.bind(this))
+
+  .catch(function(err){
+
+    console.warn('err', err);
+    return err;
+
+  })
+  }, 3000);
 
 
 
@@ -99,7 +113,7 @@ for(var i = 0; i < movieArray.length; i++){
     return(
       <div className="display">
         <Add onChangeAuthor={this.onChangeAuthor}
-          onChangeName={this.onChangeName}
+          onChangeTitle={this.onChangeTitle}
           onChangeMovie1={this.onChangeMovie1}
           onChangeMovie2={this.onChangeMovie2}
           onChangeMovie3={this.onChangeMovie3}
