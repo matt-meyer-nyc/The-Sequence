@@ -88,6 +88,7 @@ for(var i = 0; i < movieArray.length; i++){
       return err;
     });
   };
+  //needs work
 setTimeout(function(){
   AjaxHelper.addMovies(AddPlaylist)
   .then(function(response){

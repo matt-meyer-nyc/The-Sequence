@@ -6,7 +6,7 @@ var mongodb = require('mongodb');
 var app = express();
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 var MongoClient = mongodb.MongoClient;
@@ -57,7 +57,7 @@ app.post('/movies/add', function (request, response){
           console.log(err);
           response.json('error');
         } else {
-          console.log('Inserted');
+          console.log('Inserted ');
           console.log('Result', result);
           console.log('final result');
         }
