@@ -1,11 +1,6 @@
-
 import React from 'react';
 
-
 function Add(props){
-
-
-
   return (
     <div>
       <h2>Add playlist</h2>
@@ -20,6 +15,5 @@ function Add(props){
     </div>
   );
 }
-
 
 export default Add;

@@ -45,7 +45,7 @@ app.post('movies/add', function (request, response){
   console.log('request.body', request.body);
 
   MongoClient.connect(mongoUrl, function(err,db) {
-    var moviesCollection = db.collection('contacts');
+    var moviesCollection = db.collection('movies');
     if (err) {
       console.log('Unable to connect to mongodb', err);
     } else {
@@ -69,8 +69,6 @@ app.post('movies/add', function (request, response){
     }
   });
 });
-
-
 
 
 app.listen(3000, function () {

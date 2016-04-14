@@ -25,7 +25,7 @@ const Home = React.createClass({
         <br/><br/>
         <Link to="/search"><button>Search page </button></Link>
         <br/><br/>
-        <Link to="/add"><button>Add page </button></Link>
+        <Link to="/add"><button>Add page</button></Link>
         <button onClick={this.clicked}>submit</button>
       </div>
     )
