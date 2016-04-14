@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import AjaxHelper from '../utils/AjaxHelpers'
+require("../css/main.css");
 
 const Home = React.createClass({
   clicked:function(){
