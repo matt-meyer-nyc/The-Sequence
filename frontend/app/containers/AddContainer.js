@@ -103,12 +103,7 @@ setTimeout(function(){
   })
   }, 3000);
 
-
-
 },
-
-
-
 
   render: function(){
     return(
