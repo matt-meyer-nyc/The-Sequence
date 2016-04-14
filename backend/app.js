@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+
 var MongoClient = mongodb.MongoClient;
 var mongoUrl = "mongodb://localhost:27017/thesequence"
 
@@ -68,6 +69,37 @@ app.post('/movies/add', function (request, response){
     }
   });
 });
+
+
+app.get('/movies/:name', function(request,response) {
+  MongoClient.connect(mongoUrl, function (err,db){
+    var moviesCollection = db.collection('movies');
+    if (err) {
+      console.log('Unable to connect to mongodb', err);
+    } else {
+      console.log("finding by name");
+      var moviesCollection = db.collection('movies')
+      moviesCollection.find(request.params).toArray(function(err,result) {
+        if (err) {
+          console.log('Error', err);
+          response.json('error');
+        } else if (result.length) {
+          console.log("Found",result);
+          response.json(result)
+        } else {
+          console.log("no doc(s) found with 'find' ");
+          response.json('no playlists found')
+        }
+        db.close(function() {
+           console.log("db closed");
+        });
+      });
+    }
+  });
+});
+
+
+
 
 
 app.listen(3000, function () {
