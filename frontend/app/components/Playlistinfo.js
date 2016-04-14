@@ -5,7 +5,14 @@ function PlaylistInfo (props) {
 
   return (
     <div>
-      <h1>Playlist Data</h1>
+      <form>
+      <input
+        type="text"
+        onChange={props.onChange}
+        />
+      <button type="button" onClick={props.onSubmit}>Search</button>
+      </form>
+
     </div>
   );
 }

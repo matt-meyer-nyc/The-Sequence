@@ -15,7 +15,7 @@ const routes =(
       <Route path='add' component={AddContainer} />
       <Route path='list' component={ListContainer} />
       <Route path='search' component={SearchContainer} />
-      <Route path='playlistInfo' componenet={PlaylistInfoContainer} />
+      <Route path='playlistInfo' component={PlaylistInfoContainer} />
     </Route>
   </Router>
 );

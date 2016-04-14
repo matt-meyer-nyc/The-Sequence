@@ -6,7 +6,7 @@ var mongodb = require('mongodb');
 var app = express();
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
@@ -58,7 +58,7 @@ app.post('/movies/add', function (request, response){
           console.log(err);
           response.json('error');
         } else {
-          console.log('Inserted');
+          console.log('Inserted ');
           console.log('Result', result);
           console.log('final result');
         }
@@ -79,7 +79,8 @@ app.get('/movies/:name', function(request,response) {
     } else {
       console.log("finding by name");
       var moviesCollection = db.collection('movies')
-      moviesCollection.find(request.params).toArray(function(err,result) {
+      console.log('request.params', request.params);
+      moviesCollection.find({name: request.params}).toArray(function(err,result) {
         if (err) {
           console.log('Error', err);
           response.json('error');

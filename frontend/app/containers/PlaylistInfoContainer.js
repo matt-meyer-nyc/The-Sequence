@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PlaylistInfo from '../components/PlaylistInfo';
 import AjaxHelpers from '../utils/AjaxHelpers';
 
@@ -13,31 +12,35 @@ const PlaylistInfoContainer = React.createClass({
    }
  },
 
-    componentDidMount: function () {
+    onSubmit: function (e) {
       console.log("did mount");
-     AjaxHelpers.findPlaylist(playlist)
-     .then(function(respone) {
+      console.log("find this name", this.state.name);
+
+      const details = {
+        name: this.state.name,
+        playlist: this.state.playlist,
+        movies: this.state.movies
+      };
+     AjaxHelpers.findPlaylist(details)
+     .then(function(response) {
        console.log ('response data:', response.data)
        this.setState({
-         axiosReply: response.data
+         name: response.data.name,
+         playlist: this.state.playlist,
+         movies: this.state.movies
+
          });
-         console.log(axiosReply);
        }.bind(this));
+     },
 
-         console.log('find playlist', this.state.name)
-         const playlist = "hello fucker"
-          //  name: this.state.name,
-          //  playlist: this.state.playlist,
-          //  movies: this.state.movies
-
-       },
 
 
     render: function () {
       return (
 
           <PlaylistInfo
-          name={playlist}
+          onChange={this.details}
+          onSubmit={this.onSubmit}
         />
 
       );

@@ -1,0 +1,13 @@
+body{
+  background: #e6e6e6;
+}
+
+header{
+  background: red;
+  width: 100%;
+}
+
+footer {
+    background: red none repeat scroll 0 0;
+    width: 100%;
+}
