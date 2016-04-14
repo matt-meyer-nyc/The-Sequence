@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PlaylistInfo from '../components/Playlistinfo';
+import PlaylistInfo from '../components/PlaylistInfo';
 import AjaxHelpers from '../utils/AjaxHelpers';
 
 const PlaylistInfoContainer = React.createClass({
@@ -25,22 +25,20 @@ const PlaylistInfoContainer = React.createClass({
        }.bind(this));
 
          console.log('find playlist', this.state.name)
-         const playlist = {
+         const playlist = "hello fucker"
           //  name: this.state.name,
           //  playlist: this.state.playlist,
           //  movies: this.state.movies
-         };
+
        },
 
 
     render: function () {
       return (
-        <div>
-          <p>hello</p>
-          <PlaylistInfo>
 
-          </PlaylistInfo>
-        </div>
+          <PlaylistInfo
+          name={playlist}
+        />
 
       );
     }

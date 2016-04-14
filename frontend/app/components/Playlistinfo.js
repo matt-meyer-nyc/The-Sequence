@@ -1,17 +1,13 @@
 import React from 'react';
 
-function PlaylistInfo(props){
+function PlaylistInfo (props) {
 
- console.log("hello", props.movieList);
- const playlist = props.name
 
- return (
-     <div>
-       <p>
-        Hello
-       </p>
-     </div>
-   );
+  return (
+    <div>
+      <h1>Playlist Data</h1>
+    </div>
+  );
 }
 
 export default PlaylistInfo;
