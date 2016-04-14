@@ -21,12 +21,7 @@ const Home = React.createClass({
   render: function(){
     return(
       <div>
-        <Link to="/list"><button >List page </button></Link>
-        <br/><br/>
-        <Link to="/search"><button>Search page </button></Link>
-        <br/><br/>
-        <Link to="/add"><button>Add page</button></Link>
-        <button onClick={this.clicked}>submit</button>
+        <p>Home</p>
       </div>
     )
   }

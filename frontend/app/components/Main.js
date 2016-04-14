@@ -8,9 +8,10 @@ const Main = React.createClass({
   render: function(){
     return(
       <div>
-        <Header />
-        {this.props.children}
+        <Header/>
+        <div className="container">{this.props.children}</div>
         <Footer />
+
       </div>
     )
   }
