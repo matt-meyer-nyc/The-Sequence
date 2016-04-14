@@ -8,11 +8,28 @@ body{
   background: #e6e6e6;
   margin: 0;
   height: 100%;
+  font-family: 'Ek Mukta', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .container {
     margin: 0 auto;
     width: 1024px;
+    text-align: center;
+}
+
+
+/*
+################
+## Logo Style ##
+################
+*/
+
+span {
+    display: block;
+    font-weight: 100;
+    line-height: 11px;
     text-align: center;
 }
 
@@ -24,7 +41,7 @@ body{
 */
 
 header {
-  background: #ccc none repeat scroll 0 0;
+  background: #ccc;
   margin-bottom: 20px;
   padding: 8px 0 1px;
   width: 100%;
@@ -34,7 +51,11 @@ nav {
     padding: 5px 40px;
 }
 a{
+  color: #333;
   text-decoration: none;
+}
+a:hover{
+  color: #666;
 }
 ul {
     display: flex;
@@ -53,13 +74,17 @@ ul {
 ############
 */
 input {
-    border: medium none;
+    border: 1px solid #fff;
     color: #ccc;
     font-size: 14px;
-    letter-spacing: 1px;
     padding: 15px;
     text-align: center;
     width: 500px;
+}
+
+input:hover {
+    border: 1px solid red;
+    color: #666;
 }
 
 button {
@@ -81,7 +106,7 @@ button:hover {
 */
 
 footer {
-    background: #ccc none repeat scroll 0 0;
+    background: #ccc;
     margin-top: 20px;
     padding: 15px 0;
     width: 100%;
