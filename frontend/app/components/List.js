@@ -1,11 +1,25 @@
+
 import React from 'react';
 
 function List(props){
-  return (
-    <div>
-      <h2>List Data</h2>
-    </div>
-  );
+
+ console.log("hello", props.movieList);
+ const displayList = props.movieList.map((value) =>{
+   return <li><a href="#/search"><img src={value.movies[0].poster} /> <p>{value.playlist}</p></a></li>;
+ });
+
+ return (
+     <div>
+       <input
+         type="text"
+         placeholder="search"
+         onChange={props.onUpdateSearch}
+         />
+       <ul>
+         {displayList}
+       </ul>
+     </div>
+   );
 }
 
 export default List;
