@@ -89,7 +89,7 @@ const AddContainer = React.createClass({
           console.warn('err', err);
           return err;
         })
-      }, 1000);
+      }, 2000);
       console.log('playlist',AddPlaylist);
   },
   render: function(){
