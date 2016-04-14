@@ -23,7 +23,7 @@ const ListContainer = React.createClass({
    // TODO add catch
    .then(function(response){
        this.setState({
-         movies: response.data[0].playlists
+         movies: response.data
        });
    }.bind(this));
  },

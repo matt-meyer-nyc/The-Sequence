@@ -5,7 +5,7 @@ function List(props){
 
  console.log("hello", props.movieList);
  const displayList = props.movieList.map((value) =>{
-   return <li><a href="#/search"><img src={value.movies[0].poster} /> <p>{value.playlist}</p></a></li>;
+   return <li><a href="#/search"><img src={value.movies[0].poster} /> <p>{value.name}</p></a></li>;
  });
 
  return (
