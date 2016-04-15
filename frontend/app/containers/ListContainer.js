@@ -20,7 +20,7 @@ const ListContainer = React.createClass({
       });
     }.bind(this))
     .catch(function(err){
-      console.warn('err');
+      console.warn('err', err);
       return err;
     })
   },
