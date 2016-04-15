@@ -13,9 +13,13 @@ const AjaxHelpers = {
   },
   addMovies: function(AddPlayList){
     return axios.post('http://localhost:3000/movies/add', AddPlayList);
-},
+  },
   findPlaylist: function(name) {
     return axios.get('http://localhost:3000/movies/' + name.name)
   },
+  deleteAuthor: function (author) {
+    return axios.delete('http://localhost:3000/movies/' + author.author)
+  }
+
 }
 export default AjaxHelpers;

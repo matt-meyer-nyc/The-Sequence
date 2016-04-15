@@ -99,6 +99,42 @@ app.get('/movies/:name', function(request,response) {
   });
 });
 
+app.delete('/movies/:author', function (request,response) {
+ console.log("Deleting -");
+ console.log("request.body",request.body);
+ console.log("request.params",request.params);
+
+MongoClient.connect(mongoUrl, function (err,db) {
+ var moviesCollection = db.collection('movies');
+ if (err) {
+   console.log('unnable to connect to mongo via delete', err);
+ } else {
+   console.log('Deleting author -');
+   moviesCollection.remove(request.params, function(err, numRemovedDocs) {
+     console.log('numRemovedDocs', numRemovedDocs);
+     if (err) {
+       console.log('ERROR', err);
+     } else {
+       moviesCollection.find().toArray(function(err,result){
+         if (err) {
+           console.log("error", err);
+           response.json('error')
+         } else if (result.length) {
+           console.log('Found', result);
+           response.json(result);
+         } else {
+           console.log("no doc(s) found with 'delete/find' ");
+           response.json('no contacts found')
+         }
+         db.close(function() {
+           console.log("db closed");
+         });
+       });
+      }
+    });
+  }
+ });
+});
 
 
 
