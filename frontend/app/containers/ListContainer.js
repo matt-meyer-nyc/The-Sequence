@@ -1,43 +1,36 @@
 import React from 'react';
-import PlaylistInfo from '../components/PlaylistInfo';
+import axios from 'axios';
+
+import List from '../components/List';
 import AjaxHelpers from '../utils/AjaxHelpers';
 
-const PlaylistInfoContainer = React.createClass({
- getInitialState: function(){
-   return {
-     name: '',
-     playlist: '',
-     movies: [],
-     isLoading: true,
-   }
- },
-    onSubmit: function (e) {
-      console.log("did mount");
-      console.log("find this name", this.state.name);
-      const details = {
-        name: this.state.name,
-        playlist: this.state.playlist,
-        movies: this.state.movies
-      };
-     AjaxHelpers.getPlaylists(details)
-     .then(function(response) {
-       console.log ('response data:', response.data)
-       this.setState({
-         name: response.data.name,
-         playlist: this.state.playlist,
-         movies: this.state.movies
+const ListContainer = React.createClass({
+  getInitialState: function() {
+    return {
+      ajaxReturn: []
+    };
+  },
 
-         });
-       }.bind(this));
-     },
-    render: function () {
-      return (
-          <PlaylistInfo
-          onChange={this.details}
-          onSubmit={this.onSubmit}
-        />
+  componentDidMount: function() {
+    AjaxHelpers.showMovies()
+    .then(function(response){
+      console.log(response.data);
+      this.setState({
+        ajaxReturn: response.data
+      });
+    }.bind(this))
+    .catch(function(err){
+      console.warn('err');
+      return err;
+    })
+  },
+  render: function(){
+    return(
+      <div className="display">
+        <List movies={this.state.ajaxReturn}/>
+      </div>
+    )
+  }
+});
 
-      );
-    }
-  });
-export default PlaylistInfoContainer;
+export default ListContainer;

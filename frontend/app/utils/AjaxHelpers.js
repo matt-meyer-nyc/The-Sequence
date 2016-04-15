@@ -19,9 +19,7 @@ const AjaxHelpers = {
   },
   deleteAuthor: function (author) {
     return axios.delete('http://localhost:3000/movies/' + author.author)
-  },
-
-
+  }
 
 }
 export default AjaxHelpers;
