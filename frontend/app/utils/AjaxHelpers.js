@@ -11,7 +11,7 @@ const AjaxHelpers = {
   showMovies: function(){
     return axios.get('http://localhost:3000/movies');
   },
-  addMovies: function(AddPlayist){
+  addMovies: function(AddPlayList){
     return axios.post('http://localhost:3000/movies/add', AddPlayList);
 },
   findPlaylist: function(name) {

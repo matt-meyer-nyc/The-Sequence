@@ -1,111 +1,160 @@
-$font-stack:    'Ek Mukta', Helvetica, sans-serif;
-$primary-color: #e6e6e6;
-
 /*
 ############
 ## Global ##
 ############
 */
-
-
-body{
-  background: $primary-color;
+body {
+  background: #e6e6e6;
   margin: 0;
   height: 100%;
-  font-family: $font-stack;
+  font-family: "Ek Mukta", Helvetica, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  letter-spacing: 1px; }
+
 .container {
-    margin: 0 auto;
-    width: 1024px;
-    text-align: center;
-}
+  margin: 0 auto;
+  width: 1226px;
+  text-align: center; }
 
-/*
-################
-## Logo Style ##
-################
-*/
+footer {
+  background: #ccc;
+  margin-top: 20px;
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end; }
 
-span {
-    display: block;
-    font-weight: 100;
-    line-height: 11px;
-    text-align: center;
-}
+a {
+  text-decoration: none; }
 
+ul {
+  list-style-type: none; }
 
 /*
 ############
 ## Header ##
 ############
 */
-
 header {
-  background: #ccc;
   margin-bottom: 20px;
   padding: 8px 0 1px;
-  width: 100%;
-}
+  width: 100%; }
 
-nav {
-    padding: 5px 40px;
-}
-a{
-  color: #333;
-  text-decoration: none;
-}
-a:hover{
-  color: #666;
-}
-ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    align-items:baseline;
-}
+header nav {
+  padding: 40px; }
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  align-items: baseline; }
+
+header a {
+  color: #333; }
+
+header a:hover {
+  color: #666; }
+
+/*
+## Logo Style ##
+*/
+header span {
+  display: block;
+  font-weight: 100;
+  line-height: 11px;
+  text-align: center; }
+
 /*
 ############
 ## Search ##
 ############
 */
-input {
-    border: 1px solid #fff;
-    color: #ccc;
-    font-size: 14px;
-    padding: 15px;
-    text-align: center;
-    width: 500px;
+.AddPlaylist input {
+  border: 1px solid #fff;
+  color: #ccc;
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 500px; }
+
+.AddPlaylist input:hover {
+  border: 1px solid #ed677a;
+  color: #666; }
+
+.AddPlaylist button {
+  border: 0 none;
+  padding: 15px 0;
+  width: 532px;
+  background: #ed677a;
+  font-weight: bold;
+  color:#fff}
+
+.AddPlaylist button:hover {
+  background: #F08594;}
+
+.AddPlaylist > form:nth-child(2) > input:nth-child(1){
+  width: 230px;
+  margin-bottom: 10px;
+  margin-right:10px;
 }
-input:hover {
-    border: 1px solid red;
-    color: #666;
+.AddPlaylist > form:nth-child(2) > input:nth-child(2){
+  width: 230px;
 }
-button {
-    border: 0 none;
-    padding: 10px 0;
-    width: 530px;
-    border: 1px solid #ed677a;
-    background: none;
-}
-button:hover {
-    background: #ed677a;
-}
+/*
+################################################
+##             Collection Listing             ##
+################################################
+*/
+.movieList nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -42px; }
+
+.movieList nav ul li {
+  margin-bottom: 30px;
+  margin-left: 13.3px; }
+
+.movieList nav ul li a {
+  opacity: 0.7; }
+
+.movieList nav ul li a:hover {
+  opacity: 1; }
+
+.movieList nav ul li a section {
+  line-height: 2px;
+  margin-top: -10px; }
+
+.movieList nav ul li a h3 {
+  font-size: 14px;
+  color: #333; }
+
+.movieList nav ul li a p {
+  font-size: 12px;
+  color: #777; }
+
+.movieList nav ul li a img {
+  width: 190px; }
 
 /*
-############
-## Footer ##
-############
+################################################
+##                Media Query                 ##
+################################################
 */
-footer {
-    background: #ccc;
-    margin-top: 20px;
-    padding: 15px 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-}
+@media (min-width: 100px) and (max-width: 767px) {
+  .movieList nav ul {
+    flex-flow: column; }
+  .container {
+    width: 100%; }
+  .movieList nav ul li a img {
+    width: 300px; }
+  .movieList nav ul li a {
+    opacity: 1; } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 100%; }
+  .movieList nav ul li a img {
+    width: 300px; } }

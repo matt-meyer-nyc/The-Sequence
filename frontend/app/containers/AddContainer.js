@@ -107,7 +107,7 @@ setTimeout(function(){
 
   render: function(){
     return(
-      <div className="display">
+      <div>
         <Add onChangeAuthor={this.onChangeAuthor}
           onChangeTitle={this.onChangeTitle}
           onChangeMovie1={this.onChangeMovie1}

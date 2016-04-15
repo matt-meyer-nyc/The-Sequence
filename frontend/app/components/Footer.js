@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props){
   return (
     <footer>
-      Footer
+      The Sequence  © 2016
     </footer>
   );
 }
