@@ -1,12 +1,19 @@
 import React from 'react';
 import Home from './Home';
-require('../css/main.css');
+
+import Header from './Header';
+import Footer from './Footer';
+require("../sass/main.scss");
+
 
 const Main = React.createClass({
   render: function(){
     return(
       <div>
-        {this.props.children}
+        <Header/>
+        <div className="container">{this.props.children}</div>
+        <Footer />
+
       </div>
     )
   }

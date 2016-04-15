@@ -11,11 +11,11 @@ const AjaxHelpers = {
   showMovies: function(){
     return axios.get('http://localhost:3000/movies');
   },
-  addMovies: function(AddPlaylist){
-    return axios.post('http://localhost:3000/movies/add', AddPlaylist);
+  addMovies: function(AddPlayist){
+    return axios.post('http://localhost:3000/movies/add', AddPlayList);
+},
+  findPlaylist: function(name) {
+    return axios.get('http://localhost:3000/movies/' + name.name)
   },
-
-
-
 }
 export default AjaxHelpers;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import AjaxHelper from '../utils/AjaxHelpers'
-require("../css/main.css");
+
 
 const Home = React.createClass({
   clicked:function(){
@@ -21,13 +21,14 @@ const Home = React.createClass({
   render: function(){
     return(
       <div>
-        <h3>Home</h3>
+        <p>Home</p>
         <Link to="/list"><button >List page </button></Link>
         <br/><br/>
         <Link to="/search"><button>Search page </button></Link>
         <br/><br/>
         <Link to="/add"  ><button>Add page</button></Link>
         <button onClick={this.clicked}>submit</button>
+        <Link to="/playlistInfo"><button>Playlist </button></Link>
       </div>
     )
   }
