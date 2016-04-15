@@ -25,7 +25,7 @@ module.exports = {
       include: path.join(__dirname, 'app')
     },
     { test: /\.css$/, loader: "style-loader!css-loader"},
-    { test: /\.sass$/, loaders: ['style', 'css', 'sass']}
+    { test: /\.scss$/, loaders: ['style', 'css', 'sass']}
     ]
   }
 };
