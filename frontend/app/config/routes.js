@@ -7,7 +7,8 @@ import AddContainer from '../containers/AddContainer';
 import ListContainer from '../containers/ListContainer';
 import SearchContainer from '../containers/SearchContainer';
 import PlaylistInfoContainer from '../containers/PlaylistInfoContainer'
-import DeleteContainer from '../containers/DeleteContainer'
+import DeleteContainer from '../containers/DeleteContainer';
+import EditContainer from '../containers/EditContainer'
 
 const routes =(
   <Router history={hashHistory}>
@@ -18,7 +19,7 @@ const routes =(
       <Route path='search' component={SearchContainer} />
       <Route path='playlistInfo' component={PlaylistInfoContainer} />
       <Route path='delete' component={DeleteContainer} />
-
+      <Route path='edit' component={EditContainer} />
     </Route>
   </Router>
 );

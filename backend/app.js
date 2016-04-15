@@ -71,16 +71,16 @@ app.post('/movies/add', function (request, response){
 });
 
 
-app.get('/movies/:name', function(request,response) {
+app.get('/movies/:author', function(request,response) {
+  console.log('request.params', request.params);
   MongoClient.connect(mongoUrl, function (err,db){
     var moviesCollection = db.collection('movies');
     if (err) {
-      console.log('Unable to connect to mongodb', err);
+      console.log('Unable to connect to mongodb via "find ind playlist" ', err);
     } else {
-      console.log("finding by name");
-      var moviesCollection = db.collection('movies')
-      console.log('request.params', request.params);
-      moviesCollection.find({name: request.params}).toArray(function(err,result) {
+      console.log("finding by author");
+      var moviesCollection = db.collection('movies');
+      moviesCollection.find(request.params).toArray(function(err,result) {
         if (err) {
           console.log('Error', err);
           response.json('error');
@@ -97,6 +97,42 @@ app.get('/movies/:name', function(request,response) {
       });
     }
   });
+});
+
+app.put('/movies/:author', function (request,response) {
+  response.json('update this name', request.body, request.params);
+  console.log('request', request.body);
+
+  var original = {name: request.body.author};
+  var changeTo = {name: request.body.newAuthor, playlist: request.body.newPlaylist}
+
+  MongoClient.connect(mongoUrl, function (err,db) {
+    var moviesCollection = db.collection('movies');
+    if (err) {
+      console.log('Unable to connect to mongodb via "update" ', err);
+    } else {
+      console.log('updating info');
+      moviesCollection.update(original,changeTo);
+
+    setTimeout(function() {
+      moviesCollection.find(changeTo).toArray(function(err, result) {
+        if (err) {
+          console.log('Error',err);
+          response.json('error')
+        } else if (result.length) {
+          console.log('Got it', result);
+          response.json('error');
+        } else {
+          console.log('no doc(s) found with "update/find" ');
+          response.json('nothing found')
+        }
+        db.close(function () {
+          console.log('db closed');
+        });
+      });
+    }, 1000);
+    }
+  })
 });
 
 app.delete('/movies/:author', function (request,response) {

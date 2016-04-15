@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Add from '../components/Add';
 import AjaxHelper from '../utils/AjaxHelpers';
-
 const AddContainer = React.createClass({
   getInitialState: function() {
     return {
@@ -15,7 +14,6 @@ const AddContainer = React.createClass({
       listAdded:''
     };
   },
-
   onChangeAuthor: function(e) {
     this.setState({
       Author: e.target.value
@@ -58,10 +56,8 @@ const AddContainer = React.createClass({
     }
     var AddPlaylist = {author:'', playlists: [ { title:'', movies: [] }] }
     var movieArray = [this.state.Movie1, this.state.Movie2, this.state.Movie3];
-
     AddPlaylist.author = (List.Author);
     AddPlaylist.playlists[0].title = (List.Title);
-
     for(var i = 0; i < movieArray.length; i++){
         AjaxHelper.getMovies(movieArray[i])
         .then(function(response){
@@ -73,6 +69,7 @@ const AddContainer = React.createClass({
           AddPlaylist.playlists[0].movies.push(movieList);
         }.bind(this))
         .catch(function(err){
+          alert(err)
           console.warn('err', err);
           return err;
         });
@@ -106,5 +103,4 @@ const AddContainer = React.createClass({
     )
   }
 });
-
 export default AddContainer;
