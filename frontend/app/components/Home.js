@@ -14,8 +14,9 @@ const Home = React.createClass({
         <br/><br/>
         <Link to="/add"  ><button>Add page</button></Link>
         <Link to="/playlistInfo"><button>Playlist </button></Link>
-        <Link to="/delete"><button>delete </button></Link>
-      </div>
+        <Link to="/delete"><button>Delete </button></Link>
+        <Link to="/edit"><button>Edit Info</button></Link>
+    </div>
     )
   }
 });

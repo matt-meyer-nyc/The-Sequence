@@ -14,12 +14,15 @@ const AjaxHelpers = {
   addMovies: function(AddPlayList){
     return axios.post('http://localhost:3000/movies/add', AddPlayList);
   },
-  findPlaylist: function(name) {
-    return axios.get('http://localhost:3000/movies/' + name.name)
+  findPlaylist: function(author) {
+    return axios.get('http://localhost:3000/movies/' + author.author)
   },
   deleteAuthor: function (author) {
     return axios.delete('http://localhost:3000/movies/' + author.author)
+  },
+  updateInfo: function (updateInfo) {
+    return axios.put('http://localhost:3000/movies/' + updateInfo.author, updateInfo)
   }
-
 }
+
 export default AjaxHelpers;
