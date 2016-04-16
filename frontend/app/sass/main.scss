@@ -51,6 +51,9 @@ header ul {
   margin: 0;
   align-items: baseline; }
 
+header nav ul li {
+  margin-left: -40px; }
+
 header a {
   color: #333; }
 
@@ -90,53 +93,103 @@ header span {
   width: 532px;
   background: #ed677a;
   font-weight: bold;
-  color:#fff}
+  color: #fff; }
 
 .AddPlaylist button:hover {
-  background: #F08594;}
+  background: #F08594; }
 
-.AddPlaylist > form:nth-child(2) > input:nth-child(1){
+.AddPlaylist > form:nth-child(2) > input:nth-child(1) {
   width: 230px;
   margin-bottom: 10px;
-  margin-right:10px;
-}
-.AddPlaylist > form:nth-child(2) > input:nth-child(2){
-  width: 230px;
-}
+  margin-right: 10px; }
+
+.AddPlaylist > form:nth-child(2) > input:nth-child(2) {
+  width: 230px; }
+
 /*
 ################################################
-##             Collection Listing             ##
+##           Collection Movie Style           ##
 ################################################
 */
+.collection nav ul,
 .movieList nav ul {
   display: flex;
   flex-flow: row wrap;
   margin-left: -42px; }
 
+.collection nav ul li,
 .movieList nav ul li {
   margin-bottom: 30px;
   margin-left: 13.3px; }
 
+.collection nav ul li a,
 .movieList nav ul li a {
   opacity: 0.7; }
 
+.collection nav ul li a:hover,
 .movieList nav ul li a:hover {
   opacity: 1; }
 
+.collection nav ul li a section,
 .movieList nav ul li a section {
   line-height: 2px;
   margin-top: -10px; }
 
+.collection nav ul li a h3,
 .movieList nav ul li a h3 {
   font-size: 14px;
   color: #333; }
 
+.collection nav ul li a p,
 .movieList nav ul li a p {
   font-size: 12px;
   color: #777; }
 
+.collection nav ul li a img,
 .movieList nav ul li a img {
   width: 190px; }
+
+/*
+################################################
+##                 Collection                 ##
+################################################
+*/
+/*
+##  Section One  ##
+*/
+.collection > section:nth-child(1) {
+  background-color: #dadada;
+}
+
+.collection span {
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+  padding: 100px 0;
+  line-height: 25px; }
+
+.collection span h1 {
+  font-size: 40px; }
+
+.collection span p {
+  font-size: 20px;
+  font-weight: 100;
+ font-style: italic;}
+
+.collection span p:last-child {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;}
+
+/*
+##  Section Two  ##
+*/
+.collection > section:nth-child(2) {
+  margin: 50px 0; }
+
+.collection > section:nth-child(2) > p {
+  font-size: 14px;
+  margin-bottom: 50px; }
 
 /*
 ################################################
@@ -146,15 +199,22 @@ header span {
 @media (min-width: 100px) and (max-width: 767px) {
   .movieList nav ul {
     flex-flow: column; }
+    
+  .collection span,
   .container {
     width: 100%; }
+
+
+  .collection nav ul li a img,
   .movieList nav ul li a img {
     width: 300px; }
+  .collection nav ul li a,
   .movieList nav ul li a {
     opacity: 1; } }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     width: 100%; }
+  .collection nav ul li a img,
   .movieList nav ul li a img {
     width: 300px; } }

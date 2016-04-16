@@ -13,7 +13,6 @@ const Home = React.createClass({
         <Link to="/search"><button>Search page </button></Link>
         <br/><br/>
         <Link to="/add"  ><button>Add page</button></Link>
-        <button onClick={this.clicked}>submit</button>
         <Link to="/playlistInfo"><button>Playlist </button></Link>
         <Link to="/delete"><button>delete </button></Link>
       </div>
