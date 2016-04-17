@@ -26,7 +26,7 @@ const ListContainer = React.createClass({
   },
   render: function(){
     return(
-      <div className="display">
+      <div>
         <List movies={this.state.ajaxReturn}/>
       </div>
     )

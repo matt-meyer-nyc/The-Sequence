@@ -11,7 +11,7 @@ const Main = React.createClass({
     return(
       <div>
         <Header/>
-        <div className="container">{this.props.children}</div>
+        <div>{this.props.children}</div>
         <Footer />
 
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Add(props){
   return (
-    <div className="AddPlaylist">
+    <div className="AddPlaylist container">
       <p>Add playlist</p>
       <form onSubmit={props.onSubmitList}>
         <input onChange={props.onChangeAuthor} placeholder='Author' type='text' />

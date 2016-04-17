@@ -7,7 +7,6 @@ const CollectionContainer = React.createClass({
   render: function(){
     return(
       <div className="collection">
-
         <section>
           <span>
             <h1>Mind Bending</h1>
@@ -16,8 +15,8 @@ const CollectionContainer = React.createClass({
           </span>
         </section>
 
-        <section>
-          <p>30 films in this collections</p>
+        <section className="container">
+          <p>30 films in this collection</p>
           <nav>
             <ul>
               <li>
@@ -104,7 +103,37 @@ const CollectionContainer = React.createClass({
             </ul>
           </nav>
         </section>
+        <section>
+          <div className="container">
+              <p>Discussion</p>
+              <form>
+                <label for="">
+                  <textarea
+                    name="name"
+                    rows="1"
+                    type="text"
+                    placeholder="What do you think of this collection">
+                  </textarea>
+                </label>
+                <div>
+                  <button type="button">Submit</button>
+                </div>
+              </form>
+              <article>
+                <a href="#">Julio Montas</a>
+                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+              </article>
+              <article>
+                <a href="#">Julio Montas</a>
+                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+              </article>
+              <article>
+                <a href="#">Julio Montas</a>
+                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+              </article>
 
+          </div>
+        </section>
       </div>
     )
   }

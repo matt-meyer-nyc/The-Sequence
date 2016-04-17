@@ -4,7 +4,7 @@
 ############
 */
 body {
-  background: #e6e6e6;
+  background: #f8f8f8;
   margin: 0;
   height: 100%;
   font-family: "Ek Mukta", Helvetica, sans-serif;
@@ -13,11 +13,12 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 1226px;
+  width: 1280px;
   text-align: center; }
 
 footer {
-  background: #ccc;
+  background: #333;
+  color:#fff;
   margin-top: 20px;
   padding: 15px 0;
   width: 100%;
@@ -37,7 +38,6 @@ ul {
 ############
 */
 header {
-  margin-bottom: 20px;
   padding: 8px 0 1px;
   width: 100%; }
 
@@ -115,7 +115,7 @@ header span {
 .movieList nav ul {
   display: flex;
   flex-flow: row wrap;
-  margin-left: -42px; }
+  margin-left: -46px; }
 
 .collection nav ul li,
 .movieList nav ul li {
@@ -147,26 +147,27 @@ header span {
 
 .collection nav ul li a img,
 .movieList nav ul li a img {
-  width: 190px; }
+  width: 200px; }
 
 /*
 ################################################
 ##                 Collection                 ##
 ################################################
 */
+
 /*
-##  Section One  ##
+##  Section One: Information  ##
 */
 .collection > section:nth-child(1) {
-  background-color: #dadada;
-}
+    background-color: #333;
+    color: #fff;}
 
 .collection span {
-  display: block;
-  width: 700px;
-  margin: 0 auto;
-  padding: 100px 0;
-  line-height: 25px; }
+    display: block;
+    line-height: 25px;
+    margin: 0 auto;
+    padding: 12% 0;
+    width: 610px;}
 
 .collection span h1 {
   font-size: 40px; }
@@ -182,14 +183,78 @@ header span {
   font-style: normal;}
 
 /*
-##  Section Two  ##
+##  Section Two: Collection List  ##
 */
-.collection > section:nth-child(2) {
-  margin: 50px 0; }
-
 .collection > section:nth-child(2) > p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 60px;
+    margin-top: 100px;}
+
+/*
+##  Section Three: Comments  ##
+*/
+.collection > section:nth-child(3) {
+    background-color: #fff;
+    color: #000;
+}
+
+.collection > section:nth-child(3) form {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border: 1px solid #f2f2f2;
+    border-radius: 6px;
+    padding: 15px;
+}
+.collection > section:nth-child(3) p {
+  padding: 40px 0;
+}
+
+.collection > section:nth-child(3) form label textarea {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  color: #9f9f9f;
+  font-family: "Ek Mukta",Helvetica,sans-serif;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  padding: 20px 15px;
+  resize: none;
+  width: 97.6%;
+}
+
+.collection > section:nth-child(3) form div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.collection > section:nth-child(3) form div button {
+  background: #ed677a none repeat scroll 0 0;
+  border: 0 none;
+  color: #fff;
+  padding: 10px 50px;
+}
+.collection > section:nth-child(3) article{
+  line-height: 8px;
+    margin: 50px 0;
+    text-align: left;
+}
+
+.collection > section:nth-child(3) article p{
+  padding:0px;
+}
+
+.collection > section:nth-child(3) article a{
+  color:#333;
   font-size: 14px;
-  margin-bottom: 50px; }
+}
+
+.collection > section:nth-child(3) article p{
+  color:#666;
+  font-size: 12px;
+}
+
+
 
 /*
 ################################################
@@ -199,7 +264,7 @@ header span {
 @media (min-width: 100px) and (max-width: 767px) {
   .movieList nav ul {
     flex-flow: column; }
-    
+
   .collection span,
   .container {
     width: 100%; }

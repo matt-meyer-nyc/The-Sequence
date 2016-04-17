@@ -6,7 +6,7 @@ import AjaxHelper from '../utils/AjaxHelpers'
 const Home = React.createClass({
   render: function(){
     return(
-      <div>
+      <div className="container">
         <p>Home</p>
         <Link to="/list"><button >List page </button></Link>
         <br/><br/>
