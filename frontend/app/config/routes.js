@@ -13,6 +13,7 @@ import SearchContainer from '../containers/SearchContainer';
 import PlaylistInfoContainer from '../containers/PlaylistInfoContainer'
 import DeleteContainer from '../containers/DeleteContainer';
 import EditContainer from '../containers/EditContainer'
+import UserContainer from '../containers/UserContainer';
 
 const routes =(
   <Router history={hashHistory}>
@@ -29,6 +30,7 @@ const routes =(
       <Route path='playlistInfo' component={PlaylistInfoContainer} />
       <Route path='delete' component={DeleteContainer} />
       <Route path='edit' component={EditContainer} />
+      <Route path='user' component={UserContainer} />
     </Route>
   </Router>
 );
