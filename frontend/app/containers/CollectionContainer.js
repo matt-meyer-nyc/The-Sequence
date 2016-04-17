@@ -112,7 +112,7 @@ const CollectionContainer = React.createClass({
                     name="name"
                     rows="1"
                     type="text"
-                    placeholder="What do you think of this collection">
+                    placeholder="What do you think of this collection?">
                   </textarea>
                 </label>
                 <div>
@@ -120,16 +120,22 @@ const CollectionContainer = React.createClass({
                 </div>
               </form>
               <article>
-                <a href="#">Julio Montas</a>
-                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                <div>
+                  <a href="#">Julio Montas</a>
+                  <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                </div>
               </article>
               <article>
-                <a href="#">Julio Montas</a>
-                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                <div>
+                  <a href="#">Matt Montas</a>
+                  <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                </div>
               </article>
               <article>
-                <a href="#">Julio Montas</a>
-                <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                <div>
+                  <a href="#">Julio Montas</a>
+                  <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
+                </div>
               </article>
 
           </div>

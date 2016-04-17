@@ -19,7 +19,6 @@ body {
 footer {
   background: #333;
   color:#fff;
-  margin-top: 20px;
   padding: 15px 0;
   width: 100%;
   display: flex;
@@ -162,6 +161,12 @@ header span {
     background-color: #333;
     color: #fff;}
 
+.collection > section article {
+  width: 50%;
+  margin: 40px auto 0;
+}
+
+
 .collection span {
     display: block;
     line-height: 25px;
@@ -197,6 +202,7 @@ header span {
 .collection > section:nth-child(3) {
     background-color: #fff;
     color: #000;
+    padding-bottom: 60px;
 }
 
 .collection > section:nth-child(3) form {
@@ -214,7 +220,8 @@ header span {
   border: 1px solid #f2f2f2;
   border-radius: 3px;
   color: #9f9f9f;
-  font-family: "Ek Mukta",Helvetica,sans-serif;
+  font-size: 14px;
+  font-family: 'Ek Mukta';
   font-weight: lighter;
   letter-spacing: 1px;
   padding: 20px 15px;
@@ -234,14 +241,21 @@ header span {
   color: #fff;
   padding: 10px 50px;
 }
-.collection > section:nth-child(3) article{
-  line-height: 8px;
-    margin: 50px 0;
-    text-align: left;
+
+.collection > section:nth-child(3) form div button:hover {
+  background: #d55c6d none repeat scroll 0 0;
 }
 
-.collection > section:nth-child(3) article p{
-  padding:0px;
+.collection > section:nth-child(3) article {
+    border-left: 3px solid red;
+    line-height: 8px;
+    padding: 10px 30px;
+    text-align: left;
+    opacity: 0.5;
+}
+
+.collection > section:nth-child(3) article:hover {
+  opacity: 1;
 }
 
 .collection > section:nth-child(3) article a{
@@ -250,11 +264,11 @@ header span {
 }
 
 .collection > section:nth-child(3) article p{
-  color:#666;
+  padding:0px;
+  color:#999;
   font-size: 12px;
+  line-height: 18px;
 }
-
-
 
 /*
 ################################################
