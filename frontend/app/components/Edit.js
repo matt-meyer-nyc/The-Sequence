@@ -7,10 +7,10 @@ function Edit (props) {
       <input onChange={props.onChangeAuthor} />
       <br />
       <label>Change Name Here:</label>
-      <input oncChange={props.onChangeNewAuthor} />
+      <input onChange={props.onChangeNewAuthor} />
       <br />
-      <label>Change Playlist Here:</label>
-      <input onChange={props.onChangeNewPlaylist} />
+      <label>Change Title Here:</label>
+      <input onChange={props.onChangeNewTitle} />
       <br />
       <button onClick={props.onSubmit}>Change It!</button>
       <hr></hr>
