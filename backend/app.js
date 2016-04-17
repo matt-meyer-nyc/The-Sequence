@@ -31,7 +31,7 @@ app.get('/movies', function(request,response) {
           response.json('error');
           response.json('error');
         } else if (result.length) {
-          console.log('no docs found with "find" ');
+          console.log('no docs found with "find/get" ');
           response.json(result)
         } db.close(function() {
 
@@ -76,7 +76,7 @@ app.get('/movies/:author', function(request,response) {
   MongoClient.connect(mongoUrl, function (err,db){
     var moviesCollection = db.collection('movies');
     if (err) {
-      console.log('Unable to connect to mongodb via "find ind playlist" ', err);
+      console.log('Unable to connect to mongodb via "find in playlist" ', err);
     } else {
       console.log("finding by author");
       var moviesCollection = db.collection('movies');
@@ -88,7 +88,7 @@ app.get('/movies/:author', function(request,response) {
           console.log("Found",result);
           response.json(result)
         } else {
-          console.log("no doc(s) found with 'find' ");
+          console.log("no doc(s) found with 'find/getspecific' ");
           response.json('no playlists found')
         }
         db.close(function() {
@@ -100,11 +100,11 @@ app.get('/movies/:author', function(request,response) {
 });
 
 app.put('/movies/:author', function (request,response) {
-  response.json('update this name', request.body, request.params);
-  console.log('request', request.body);
+  // response.json('update this name', request.params);
+  // console.log('request', request.body);
 
-  var original = {name: request.body.author};
-  var changeTo = {name: request.body.newAuthor, playlist: request.body.newPlaylist}
+  var original = {author: request.body.author};
+  var changeTo = {author: request.body.newAuthor, title: request.body.newTitle}
 
   MongoClient.connect(mongoUrl, function (err,db) {
     var moviesCollection = db.collection('movies');
@@ -116,12 +116,13 @@ app.put('/movies/:author', function (request,response) {
 
     setTimeout(function() {
       moviesCollection.find(changeTo).toArray(function(err, result) {
+        console.log(changeTo);
         if (err) {
           console.log('Error',err);
           response.json('error')
         } else if (result.length) {
           console.log('Got it', result);
-          response.json('error');
+          response.json(result);
         } else {
           console.log('no doc(s) found with "update/find" ');
           response.json('nothing found')

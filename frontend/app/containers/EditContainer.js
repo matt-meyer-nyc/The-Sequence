@@ -7,7 +7,7 @@ const EditContainer = React.createClass ({
       return {
         ajaxResponse: [],
         author: '',
-        playlist: ''
+        title: ''
 
       }
     },
@@ -19,23 +19,23 @@ const EditContainer = React.createClass ({
 
     handleNewAuthor: function(e) {
       this.setState({
-        author: e.target.value
+        newAuthor: e.target.value
       })
     },
 
-    handleNewPlaylist: function(e) {
+    handleNewTitle: function(e) {
       this.setState({
-        playlist: e.target.value
+        newTitle: e.target.value
       })
     },
 
 
-     onSubmit: function () {
+     onSubmitUpdate: function () {
        console.log("author to change", this.state.author);
        const updateInfo = {
          author: this.state.author,
          newAuthor: this.state.newAuthor,
-         newPlaylist: this.state.newPlaylist,
+         newTitle: this.state.newTitle
 
        };
        AjaxHelpers.updateInfo(updateInfo)
@@ -51,9 +51,9 @@ const EditContainer = React.createClass ({
       <Edit
         onChangeAuthor={this.handleAuthor}
         onChangeNewAuthor={this.handleNewAuthor}
-        onChangeNewPlaylist={this.handleNewPlaylist}
+        onChangeNewTitle={this.handleNewTitle}
 
-        onSubmit={this.onSubmit}
+        onSubmit={this.onSubmitUpdate}
         />
     );
    }
