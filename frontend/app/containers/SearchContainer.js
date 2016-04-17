@@ -3,7 +3,6 @@ import axios from 'axios';
 import AjaxHelper from '../utils/AjaxHelpers';
 
 const SearchContainer = React.createClass({
-
   render: function(){
     return(
       <div>
