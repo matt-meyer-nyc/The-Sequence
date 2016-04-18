@@ -2,7 +2,6 @@ import React from 'react';
 
 function PlaylistInfo (props) {
 
-
   return (
     <div>
       <form>
@@ -12,7 +11,6 @@ function PlaylistInfo (props) {
         />
       <button type="button" onClick={props.onSubmit}>Search</button>
       </form>
-
     </div>
   );
 }

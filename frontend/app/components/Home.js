@@ -6,22 +6,18 @@ import AjaxHelper from '../utils/AjaxHelpers'
 const Home = React.createClass({
   render: function(){
     return(
-      <div className="container">
-        <p>Home</p>
-        <Link to="/list"><button >List page </button></Link>
-        <br/><br/>
-        <Link to="/search"><button>Search page </button></Link>
-        <br/><br/>
-        <Link to="/add"  ><button>Add page</button></Link>
-        <Link to="/playlistInfo"><button>Playlist </button></Link>
-        <Link to="/delete"><button>Delete </button></Link>
-        <Link to="/edit"><button>Edit Info</button></Link>
+      <div className="home">
+        <section>
+          <p>Keep track of any movie you own, watch or going to see by adding then in your personal movie list collection.</p>
+        </section>
+
+        <section className="container">
+          <h2>Browse our users handpicked movie selection</h2>
+          <Link to="/list"><button>Discover</button></Link>
+        </section>
     </div>
     )
   }
 });
-
-
-
 
 export default Home;

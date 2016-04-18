@@ -8,7 +8,6 @@ import ListContainer from '../containers/ListContainer';
 
 import CollectionContainer from '../containers/CollectionContainer';
 
-
 import SearchContainer from '../containers/SearchContainer';
 import PlaylistInfoContainer from '../containers/PlaylistInfoContainer'
 import DeleteContainer from '../containers/DeleteContainer';
@@ -20,11 +19,7 @@ const routes =(
     <Route path='/' component={Main}>
       <IndexRoute component={Home}/>
       <Route path='add' component={AddContainer} />
-
-
       <Route path='CollectionName' component={CollectionContainer} />
-
-
       <Route path='list' component={ListContainer} />
       <Route path='search' component={SearchContainer} />
       <Route path='playlistInfo' component={PlaylistInfoContainer} />
@@ -34,6 +29,5 @@ const routes =(
     </Route>
   </Router>
 );
-
 
 export default routes;

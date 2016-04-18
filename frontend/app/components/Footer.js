@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props){
   return (
     <footer>
-      The Sequence  © 2016
+      <p>Copyright © 2016 The Sequence</p>
     </footer>
   );
 }

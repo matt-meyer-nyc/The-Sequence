@@ -22,11 +22,14 @@ body {
 footer {
   background: #333;
   color:#fff;
+  font-size: 12px;
+  letter-spacing: 1.5px;
   padding: 15px 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-self: flex-end; }
+
 
 a {
   text-decoration: none; }
@@ -273,6 +276,48 @@ header span {
 
 /*
 ################################################
+##                 Index Page                 ##
+################################################
+*/
+
+.home {margin-top: -67px;}
+.home section:nth-child(1) {
+    background: rgba(0, 0, 0, 0) url("https://media.giphy.com/media/xaMg6NGwH2fFS/giphy.gif") repeat scroll 0 0;
+    height: 500px;
+    opacity: 0.7;
+}
+.home section:nth-child(1) p {
+    background: rgba(255, 0, 0, 0.7) none repeat scroll 0 0;
+    color: #f8f8f8;
+    font-size: 67px;
+    font-weight: 800;
+    line-height: 85px;
+    padding: 8% 2% 9.1%;
+    text-align: center;
+}
+
+.home section:nth-child(2) h2 {
+  color: #333;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    margin-top: 5%;
+}
+.home section:nth-child(2) button {
+    background: #ed677a none repeat scroll 0 0;
+    color: #fff;
+    border: 0 none;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    margin-top: 40px;
+    padding: 15px 100px;
+}
+.home section:nth-child(2) button:hover {
+    background: #d55c6d none repeat scroll 0 0;
+  }
+
+/*
+################################################
 ##                Media Query                 ##
 ################################################
 */
@@ -300,6 +345,16 @@ header span {
     width: 93%;}
   .collection > section article {
     width: 90%;}
+
+
+/*
+##  Home  ##
+*/
+.home section:nth-child(1) p {
+  color: #f8f8f8;
+  font-size: 42px;
+  line-height: 55px;
+  padding: 13% 2%;}
 
 
   }
