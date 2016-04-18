@@ -8,7 +8,7 @@ const Home = React.createClass({
     return(
       <div className="home">
         <section>
-          <p>Keep track of any movie you own, watch or going to see by adding then in your personal movie list collection.</p>
+          <p>Curate, create, save your own movie playlists</p>
         </section>
 
         <section className="container">
