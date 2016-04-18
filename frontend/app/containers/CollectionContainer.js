@@ -7,6 +7,7 @@ const CollectionContainer = React.createClass({
   render: function(){
     return(
       <div className="collection">
+
         <section>
           <span>
             <h1>Mind Bending</h1>
@@ -17,14 +18,15 @@ const CollectionContainer = React.createClass({
 
         <section className="container">
           <p>30 films in this collection</p>
+
           <nav>
             <ul>
+
               <li>
                 <a href="#">
                   <img src="http://static-api.guidebox.com/thumbnails_movies_medium/19290-1135112900-5343494471-1794592925-medium-240x342.jpg"/>
                   <section>
-                    <h3>dasdf</h3>
-                    <p>asdf</p>
+                    <h3>The Matrix (1999)</h3>
                   </section>
                 </a>
               </li>
@@ -137,7 +139,6 @@ const CollectionContainer = React.createClass({
                   <p>The Most Eye-Popping and Imaginative Movie of the Year Gannett. Breaking box office records</p>
                 </div>
               </article>
-
           </div>
         </section>
       </div>

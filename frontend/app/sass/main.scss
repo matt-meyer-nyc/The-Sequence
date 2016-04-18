@@ -3,6 +3,9 @@
 ## Global ##
 ############
 */
+
+// *{margin:0;padding:0;}
+
 body {
   background: #f8f8f8;
   margin: 0;
@@ -161,12 +164,6 @@ header span {
     background-color: #333;
     color: #fff;}
 
-.collection > section article {
-  width: 50%;
-  margin: 40px auto 0;
-}
-
-
 .collection span {
     display: block;
     line-height: 25px;
@@ -204,6 +201,10 @@ header span {
     color: #000;
     padding-bottom: 60px;
 }
+
+.collection > section article {
+  width: 50%;
+  margin: 40px auto 0;}
 
 .collection > section:nth-child(3) form {
     background: #f8f8f8 none repeat scroll 0 0;
