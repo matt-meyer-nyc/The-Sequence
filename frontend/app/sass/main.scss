@@ -282,15 +282,27 @@ header span {
 
   .collection span,
   .container {
-    width: 100%; }
-
-
+    width: 95%; }
   .collection nav ul li a img,
   .movieList nav ul li a img {
     width: 300px; }
   .collection nav ul li a,
   .movieList nav ul li a {
-    opacity: 1; } }
+    opacity: 1; }
+
+  /*
+  ##  CollectionName  ##
+  */
+  .collection nav ul,
+  .movieList nav ul {
+    flex-flow: column nowrap;}
+  .collection > section:nth-child(3) form label textarea {
+    width: 93%;}
+  .collection > section article {
+    width: 90%;}
+
+
+  }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
